@@ -15,8 +15,8 @@ const AdvancesOptions: React.FC<Props> = ({
   lengthSeconds,
 }) => {
   const [title, setTitle] = useState(downloadTitle);
-  const [startTime, setStartTime] = useState(0);
-  const [endTime, setEndTime] = useState(lengthSeconds);
+  const [startTime] = useState(0);
+  const [endTime] = useState(lengthSeconds);
 
   return (
     <section className="options">
