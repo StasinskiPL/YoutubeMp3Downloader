@@ -4,6 +4,7 @@ import SimilarVideo from "./SimilarVideo";
 
 const SimilarVideos = () => {
   const { similarVideos } = useAppContext();
+
   return (
     <section className="similar">
         {similarVideos.length > 0 &&
@@ -13,7 +14,7 @@ const SimilarVideos = () => {
         }
       <div className="similar-inner">
         {similarVideos.map((video) => {
-          const { id, title, thumbnails,short_view_count_text,published,length_seconds } = video;
+          const { id, title, thumbnails,short_view_count_text,published,length_seconds,richThumbnails } = video;
           return (
             <SimilarVideo
               id={id}
@@ -23,6 +24,7 @@ const SimilarVideos = () => {
               key={id}
               published={published}
               duration={length_seconds}
+              richThumbnails={richThumbnails[0].url}
             />
           );
         })}

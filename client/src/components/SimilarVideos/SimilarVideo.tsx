@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAppContext } from "../../context/AppContext";
 import fetchVideoInfo from "../../api/youtube";
 import { convertTime } from "../../helpers/convertTime";
@@ -10,6 +10,7 @@ interface Props {
   views: string;
   published: string;
   duration: number;
+  richThumbnails:string;
 }
 
 const SimilarVideo: React.FC<Props> = ({
@@ -19,8 +20,10 @@ const SimilarVideo: React.FC<Props> = ({
   views,
   published,
   duration,
+  richThumbnails,
 }) => {
   const { setSimilarVideos, setVideoInfo, setLoading } = useAppContext();
+  const [showSlids , setShowSlids] = useState(false)
 
   const fetchVideo = () => {
     setLoading(true);
@@ -44,7 +47,9 @@ const SimilarVideo: React.FC<Props> = ({
   return (
     <article className="similar__video">
       <div className="similar__video-img-wrapper" onClick={fetchVideo}>
-        <img loading="lazy" src={thumbnail} alt={title} />
+        <img onMouseEnter={()=>{setShowSlids(true)}}
+          onMouseLeave={()=>setShowSlids(false)}
+        loading="lazy" src={showSlids ? richThumbnails :thumbnail} alt={title} />
       </div>
       <h5 onClick={fetchVideo}>{title}</h5>
       <div className="similar__video-infos">

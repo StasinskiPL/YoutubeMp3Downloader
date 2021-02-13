@@ -5,14 +5,10 @@ import AdvancesOptions from "./AdvancesOptions";
 import DownloadLinks from "./DownloadLinks";
 import VideoImg from "./VideoImg";
 
-
-
 const VideoInfo: React.FC = () => {
   const { loading, videoInfo } = useAppContext();
   const [showAdvancedOptions, setShowAdvancedOptions] = useState(false);
   const [downloadTitle, setDowloadTitle] = useState("");
-
-  console.log(videoInfo);
 
   useEffect(() => {
     if (videoInfo) {
