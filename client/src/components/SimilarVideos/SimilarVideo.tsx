@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAppContext } from "../../context/AppContext";
-import fetchVideoInfo from "../../api/youtube";
+import fetchVideoInfo, { BASE_URL } from "../../api/youtube";
 import { convertTime } from "../../helpers/convertTime";
 
 interface Props {
@@ -59,7 +59,7 @@ const SimilarVideo: React.FC<Props> = ({
       </div>
       <div className="similar__video-download-wrapper">
         <a
-          href={`http://localhost:4000/download/mp3?id=${id}&title=${title}`}
+          href={`${BASE_URL}/download/mp3?id=${id}&title=${title}`}
           target="blank"
         >
           Download Mp3
