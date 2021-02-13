@@ -24,8 +24,6 @@ app.get("/download/mp3", async (req, res) => {
   try {
     const id = req.query.id;
     const title = req.query.title;
-    const start = req.query.start;
-    const end = req.query.end;
     res.header(
       "Content-Disposition",
       `attachment; filename=${
@@ -63,5 +61,4 @@ app.get("/download/mp4", async (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log("Server Works !!! At port 4000");
 });
