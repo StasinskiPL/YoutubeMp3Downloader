@@ -1,11 +1,17 @@
 const express = require("express");
-const cors = require("cors");
 const ytdl = require("ytdl-core");
 const convertString = require("./helper");
 
 const app = express();
 
-app.use(cors());
+
+app.use((_, res, next) => {
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,PATCH");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
+  next();
+});
 
 app.get("/info", async (req, res) => {
     try {
