@@ -22,6 +22,7 @@ const Search: React.FC = () => {
         },
       })
         .then((res) => {
+          console.log(res.data)
           setVideoInfo(res.data.info.videoDetails);
           setSimilarVideos(res.data.info.related_videos);
         })
@@ -33,7 +34,9 @@ const Search: React.FC = () => {
         });
     } else {
       setError("Your Url doesn`t match");
+      setLoading(false);
     }
+    inputRef.current.value = "";
   };
 
   return (
