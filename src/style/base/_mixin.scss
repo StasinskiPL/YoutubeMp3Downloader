@@ -24,7 +24,7 @@
     @if (color:$color-black-1){
         transition: color 0.3s linear;
         &:hover,&:focus{
-            color: lighten($color-black-1, 35);
+            color: lighten($color-black-1, 80);
         }
     }  
 }

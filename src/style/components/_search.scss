@@ -1,0 +1,47 @@
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+
+    &-wrapper {
+        margin-top: 2rem;
+        padding: 0.5rem;
+    }
+
+    &-input {
+        border-radius: 4px 0px 0px 4px;
+        width: 30em;
+        text-align: left;
+        border: 2px solid #eeeeee;
+        background: #eeeeee;
+        outline: none;
+        font-size: 1.3em;
+        padding: 5px 10px;
+        overflow: hidden;
+        &.error{
+            border: 2px solid rgb(220, 60, 60);
+        }
+        &:focus {
+            border: 2px solid #0485ff;
+        }
+    }
+
+    &-btn {
+        font-size: 1.75rem;
+        cursor: pointer;
+        height: 100%;
+        border: transparent;
+        border-radius: 0px 4px 4px 0px;
+        border: 2px solid #0485ff;
+        background: #0485ff;
+        color: white;
+        padding: 0 5px;
+    }
+    &-error{
+        text-align: center;
+        padding: 0.5rem;
+        color: rgb(220, 60, 60);
+    }
+}
