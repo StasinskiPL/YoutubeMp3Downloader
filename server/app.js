@@ -4,6 +4,8 @@ const convertString = require("./helper");
 
 const app = express();
 
+const port = process.env.PORT || 8080;
+
 
 app.use((_, res, next) => {
   res.setHeader("Content-Type", "application/json");
@@ -66,5 +68,5 @@ app.get("/download/mp4", async (req, res) => {
   }
 });
 
-app.listen(4000, () => {
+app.listen(port, () => {
 });

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
+import { BASE_URL } from "../../api/youtube";
 
 interface Props {
   videoId: string;
@@ -63,14 +64,14 @@ const AdvancesOptions: React.FC<Props> = ({
         </div> */}
         <div className="video__info-download">
           <a
-            href={`http://localhost:4000/download/mp3?id=${videoId}&title=${title}
+            href={`${BASE_URL}/download/mp3?id=${videoId}&title=${title}
             &start=${startTime}&end=${endTime}`}
             target="blank"
           >
             Download Mp3
           </a>
           <a
-            href={`http://localhost:4000/download/mp4?id=${videoId}&title=${title}
+            href={`${BASE_URL}/download/mp4?id=${videoId}&title=${title}
             &start=${startTime}&end=${endTime}`}
             target="blank"
           >
