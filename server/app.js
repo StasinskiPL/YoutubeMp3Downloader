@@ -40,8 +40,7 @@ app.get("/download/mp3", async (req, res) => {
     );
 
     ytdl(id, {
-      filter: (format) => !format.hasVideo,
-      quality: "highest",
+      quality:"highestaudio",
     }).pipe(res);
   } catch (error) {
     res.status(400).send({ error: error });
@@ -69,4 +68,5 @@ app.get("/download/mp4", async (req, res) => {
 });
 
 app.listen(port, () => {
+  console.log("listening")
 });
